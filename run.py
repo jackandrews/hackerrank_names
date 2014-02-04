@@ -3,10 +3,12 @@ import re
 
 RUN_COMPETITION = False
 
+
 def load_hard_names():
     with open('boy-names-hard.txt') as f:
         names = f.read().split("\n")
         return [x.strip() for x in names]
+
 
 def load_stdin_names():
     names = sys.stdin.readlines()
@@ -27,7 +29,6 @@ if RUN_COMPETITION:
     names = load_stdin_names()
 else:
     names = load_hard_names()
-
 
 for k, name in enumerate(names):
     name = name.strip().lower()
